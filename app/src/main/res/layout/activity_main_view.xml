@@ -3,180 +3,155 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_soft_gradient"
     tools:context=".MainView">
+
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:elevation="20dp"
-        android:translationZ="8dp"
         android:id="@+id/topNav"
-        >
-
-    <RelativeLayout
-        android:elevation="20dp"
-
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:orientation="vertical"
-        >
+        android:layout_height="88dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_alignParentBottom="true"
-
-            >
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp">
 
             <TextView
                 android:id="@+id/MainTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="64dp"
-                android:layout_toLeftOf="@id/listText"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
                 android:background="@drawable/green_circle"
                 android:gravity="center"
-                android:textStyle="bold"
-                android:text="Main" />
+                android:text="Main"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/listText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:textStyle="bold"
-                android:text="List" />
+                android:text="List"
+                android:textColor="#4B5B47"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Goal"
-            android:id="@+id/AboutTxt"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:layout_toRightOf="@id/listText"
-            android:layout_marginLeft="70dp"
-            />
-        </RelativeLayout>
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/AboutTxt"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Goal"
+                android:textColor="#4B5B47"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-
     <FrameLayout
-        android:layout_above="@id/bottom"
-        android:layout_below="@id/topNav"
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </FrameLayout>
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:layout_below="@id/topNav"
+        android:layout_marginTop="12dp" />
 
     <RelativeLayout
         android:id="@+id/bottom"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="88dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bottom_nav_background"
+        android:elevation="8dp">
 
-        >
         <androidx.constraintlayout.widget.ConstraintLayout
-           android:id="@+id/icons"
+            android:id="@+id/icons"
             android:layout_width="match_parent"
-            android:layout_centerHorizontal="true"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <ImageButton
                 android:id="@+id/account"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="59dp"
-                android:layout_marginEnd="100dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/accountsvg"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="Account"
+                app:layout_constraintBottom_toTopOf="@+id/accountTxt"
                 app:layout_constraintEnd_toStartOf="@+id/main"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/main"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/mainsvg"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                android:contentDescription="Main"
+                app:layout_constraintBottom_toTopOf="@+id/mainTxt"
+                app:layout_constraintEnd_toStartOf="@+id/settings"
+                app:layout_constraintStart_toEndOf="@+id/account"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/settings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginBottom="1dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/settingssvg"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="Settings"
+                app:layout_constraintBottom_toTopOf="@+id/settingsTxt"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/main"
                 app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_below="@id/icons"
-            android:layout_width="match_parent"
-            android:layout_centerHorizontal="true"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/accountTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="59dp"
-                android:layout_marginEnd="100dp"
                 android:text="me"
+                android:textColor="#5B6957"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/mainTxt"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toEndOf="@+id/account"
+                app:layout_constraintStart_toStartOf="@+id/account" />
 
             <TextView
                 android:id="@+id/mainTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="main"
+                android:textColor="#5B6957"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toEndOf="@+id/main"
+                app:layout_constraintStart_toStartOf="@+id/main" />
 
             <TextView
                 android:id="@+id/settingsTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="52dp"
-                android:layout_marginBottom="1dp"
                 android:text="settings"
+                android:textColor="#5B6957"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/mainTxt"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintEnd_toEndOf="@+id/settings"
+                app:layout_constraintStart_toStartOf="@+id/settings" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </RelativeLayout>
 
-
 </RelativeLayout>
-
-
-

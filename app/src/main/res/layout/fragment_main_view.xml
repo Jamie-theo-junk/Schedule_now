@@ -6,127 +6,125 @@
     tools:context=".MainViewFragment">
 
     <ScrollView
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <RelativeLayout
-                android:layout_below="@id/topNav"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            <RelativeLayout
-
                 android:id="@+id/NewCard"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="60dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/edit_text_custom">
+                android:layout_height="64dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/surface_card_background"
+                android:elevation="2dp"
+                android:paddingHorizontal="16dp">
 
                 <TextView
-                    android:textSize="20dp"
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="20dp"
-                    android:text="Add New Task" />
+                    android:text="Add New Task"
+                    android:textColor="#22311F"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <ImageButton
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/add_me_icon" />
+                    android:background="@drawable/add_me_icon"
+                    android:contentDescription="Add task" />
             </RelativeLayout>
 
             <TextView
                 android:id="@+id/upcomingTitle"
-                android:layout_below="@id/NewCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Upcoming"
-                android:textSize="24dp"
-                android:layout_marginLeft="20dp"
+                android:layout_below="@id/NewCard"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/open_sans_variable_font_wdth"/>
+                android:fontFamily="@font/open_sans_variable_font_wdth"
+                android:text="Upcoming"
+                android:textColor="#1F2D1D"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <RelativeLayout
                 android:id="@+id/UpcomingCard"
-                android:layout_below="@id/upcomingTitle"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="130dp"
+                android:layout_below="@id/upcomingTitle"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/upcoming_background_custom"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="5dp">
+                android:elevation="3dp"
+                android:padding="12dp">
 
                 <ImageView
                     android:id="@+id/image"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/imagefamer"/>
+                    android:background="@drawable/imagefamer" />
 
                 <TextView
                     android:id="@+id/titleCard"
-                    android:layout_toRightOf="@id/image"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pick the plants"/>
+                    android:layout_marginStart="14dp"
+                    android:layout_toEndOf="@id/image"
+                    android:text="Pick the plants"
+                    android:textColor="#1A2518"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/due"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Due:"
-                    android:textSize="15dp"
                     android:layout_below="@id/titleCard"
-                    android:layout_toRightOf="@id/image"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/black"/>
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_toEndOf="@id/image"
+                    android:text="Due:"
+                    android:textColor="#3E4E39"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/Date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Due: 15/02/2022 14:00"
-                    android:textSize="15dp"
-                    android:layout_below="@id/titleCard"
-                    android:layout_toRightOf="@id/due"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/black"/>
+                    android:layout_alignBaseline="@id/due"
+                    android:layout_marginStart="6dp"
+                    android:layout_toEndOf="@id/due"
+                    android:text="15/02/2022"
+                    android:textColor="#3E4E39"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:text="Details"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/lighter_green"/>
+                    android:layout_toStartOf="@id/categoryImage"
+                    android:layout_marginEnd="8dp"
+                    android:text="Details"
+                    android:textColor="@color/lighter_green"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/categoryImage"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_centerVertical="true"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginRight="20dp"/>
-
+                    android:layout_centerVertical="true" />
 
             </RelativeLayout>
 
@@ -134,78 +132,80 @@
                 android:id="@+id/categoriesTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-
-                android:text="Categories"
                 android:layout_below="@id/UpcomingCard"
                 android:layout_marginTop="20dp"
-                android:textSize="24dp"
-                android:layout_marginLeft="20dp"
-                android:textColor="@color/black"/>
+                android:text="Categories"
+                android:textColor="#1F2D1D"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:scrollbars="none"
-                    android:id="@+id/categoryRecyclerFragView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_below="@id/categoriesTxt"
-                    />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoryRecyclerFragView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/categoriesTxt"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="6dp"
+                android:scrollbars="none" />
 
-                <TextView
-                    android:id="@+id/TimeTxt"
-                    android:layout_below="@id/categoryRecyclerFragView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Timer"
-                    android:textSize="24dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/open_sans_variable_font_wdth"/>
+            <TextView
+                android:id="@+id/TimeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/categoryRecyclerFragView"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/open_sans_variable_font_wdth"
+                android:text="Timer"
+                android:textColor="#1F2D1D"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/Timer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textSize="35dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_below="@id/TimeTxt"
-                    android:text="00:00:000"/>
-                <RelativeLayout
-                    android:layout_below="@id/Timer"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/Timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TimeTxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="14dp"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:background="@drawable/surface_card_background"
+                android:text="00:00:000"
+                android:textColor="#1D2B1A"
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/StartTime"
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:text="Start"
-                        android:background="@drawable/list_task_item"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="5dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Timer"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/StartTime"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/list_task_item"
+                    android:text="Start"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/EndTime"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_toRightOf="@+id/StartTime"
-                    android:text="Stop"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
                     android:background="@drawable/list_task_item"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"/>
+                    android:text="Stop"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
 
-                </RelativeLayout>
+            </LinearLayout>
 
-            </RelativeLayout>
+        </RelativeLayout>
 
     </ScrollView>
 </RelativeLayout>
